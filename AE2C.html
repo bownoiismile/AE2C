@@ -1,0 +1,263 @@
+<?php
+//including the database connection file
+include_once("config.php");
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AE2 Creatives</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+		.container {
+			position: relative;
+		}
+		.center {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 50px;
+		}
+		.mySlides {display:none;}
+		html {
+			scroll-behavior: smooth;
+		}
+		body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+		.w3-row-padding img {margin-bottom: 12px}
+		/* Set the width of the sidebar to 120px */
+		.w3-sidebar {width: 120px;background: #222;}
+		/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+		#main {margin-left: 120px}
+		/* Remove margins from "page content" on small screens */
+		@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+	</style>
+</head>
+<body class="w3-black">
+    <form action="AE2C.php" method="post" name="form1">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#services" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-briefcase w3-xxlarge"></i>
+    <p>Services</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>GALLERY</p>
+  </a>
+  <a href="#client" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-comment w3-xxlarge"></i>
+    <p>FEEDBACK</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">GALLERY</a>
+	<a href="#client" class="w3-bar-item w3-button" style="width:25% !important">FEEDBACK</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-content w3-section" id="home">
+	<img src="ae2.jpg" alt="boy" class="mySlides w3-animate-right" width="970" height="500">
+    <img src="ae2_b.jpg" alt="boy" class="mySlides w3-animate-left" width="970" height="500">
+  </header>
+  <script>
+    var myIndex = 0;
+      carousel();
+
+    function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+  </script>
+  <br/><br/><br/>
+  <h1 class="w3-center w3-text-grey">We Capture Memories with a Single Click!</h1>
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">About</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>AE2 Creatives was established August 2018 by Andrew Esguerra Jr., it was only the idea of his friend/officemate who wants to have his own business that's related to photography.
+    </p>
+	<div class="w3-padding-64 w3-content" id="services">
+    <h2 class="w3-text-light-grey">Services</h2>
+	<hr style="width:200px" class="w3-opacity">
+    <h4 class="w3-wide w3-text-light-grey">Photo Booth</h4>
+    <p> We offer editing/layouts of designs for any occasion / events. Let's complete the party you've planned 
+	and served thru take home photos and souvenirs that your beloved guests will surely love!<br/><br/></p>
+	<h4 class="w3-wide w3-text-light-grey">Tools use:</h4>
+	<div class="w3-row-padding" style="margin:0 -16px">
+	<div class="w3-half">
+        <p><img src="CanonEOSM50.jpg" style="width:100px; height:100px" onclick="onClick(this)" class="w3-hover-opacity">&nbsp;&nbsp;Camera: Canon EOS M50</p>
+		<p><img src="Epson_L3150.jpg" style="width:100px; height:100px" onclick="onClick(this)" class="w3-hover-opacity">&nbsp;&nbsp;Printer: Epson L3150</p>
+		<p><img src="PBLaptop.gif" style="width:100px; height:100px" onclick="onClick(this)" class="w3-hover-opacity">&nbsp;&nbsp;Laptop: Asus Gaming X571GD BQ297T</p>
+	</div>
+	<div class="w3-half">
+		<p><img src="BoxLight.jpg" style="width:100px; height:100px" onclick="onClick(this)" class="w3-hover-opacity">&nbsp;&nbsp;Box Light: No Brand from Lazada</p>
+		<p><img src="PBAccessories.jpg" style="width:100px; height:100px" onclick="onClick(this)" class="w3-hover-opacity">&nbsp;&nbsp;Accessories: No Brand from Lazada</p>
+		<p><img src="PBStand.jpg" style="width:100px; height:100px" onclick="onClick(this)" class="w3-hover-opacity">&nbsp;&nbsp;Stand: No Brand from Lazada</p>
+	</div>
+	</div>
+	<h4 class="w3-wide w3-text-light-grey">Inclusions:</h4>
+	<p>Unli Shots<br/>
+	Accessories for photo included<br/>
+	Layout and Design<br/>
+	Printing</p>
+	<h5 class="w3-wide w3-text-light-grey">Availability: 7am-5pm / Sunday-Saturday</h5>
+	<h4 class="w3-wide w3-text-light-grey">Price: 2,500 php (Fixed)</h4>
+	<!-- End About Section -->
+	</div>
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">Our Works</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+	  <div class="container">
+        <img src="sample1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+		<div class="center w3-text-white">Sample 1</div>
+	  </div>
+	  <div class="container">
+        <img src="sample2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+		<div class="center w3-text-white">Sample 3</div>
+	  </div>
+	  <div class="container">
+        <img src="sample3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+		<div class="center w3-text-white">Sample 5</div>
+	  </div>
+      </div>
+
+      <div class="w3-half">
+	  <div class="container">
+        <img src="sample4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+		<div class="center w3-text-white">Sample 2</div>
+	  </div>
+	  <div class="container">
+        <img src="sample5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+		<div class="center w3-text-white">Sample 4</div>
+	  </div>
+	  <div class="container">
+        <img src="sample7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+		<div class="center w3-text-white">Sample 6</div>
+	  </div>
+      </div>
+    <!-- End photo grid -->
+    </div>
+	<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+		<span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+		<div class="w3-modal-content w3-animate-zoom">
+			<img id="img01" style="width:100%">
+		</div>
+	</div>
+	<script>
+		function onClick(element) {
+			document.getElementById("img01").src = element.src;
+			document.getElementById("modal01").style.display = "block";
+		}
+	</script>
+  <!-- End Portfolio Section -->
+  </div>
+  <!-- Review Section-->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="client">
+  <h2 class="w3-text-light-grey">Feedback</h2>
+  <hr style="width:200px" class="w3-opacity">
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading"><img src="rev1.jpg" class="media-object" style="width:45px">&nbsp;&nbsp;Kathryn Mae Aguilar <small><i>Posted on October 01, 2019</i></small></h4>
+      <p>Very accomodating and friendly staffs. Good shots and not too pricey.</p>
+  </div>
+  <!-- End Reviews -->
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contacts</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Rosario, Batangas</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: -- ------</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: ae.core@yahoo.com</p>
+    </div><br>
+    <p>Let's schedule your reservation here. Send us a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input size="30" maxlength="30" type="text" placeholder="First Name" required name="First_Name">
+	  <input size="30" type="text" placeholder="Last Name" required name="Last_Name">
+	  <input size="30" type="text" placeholder="Middle Name" required name="Middle_Name"><br/><br/>
+	  <input size="30" type="email" placeholder="Email" required name="Email">
+	  <input size="15" type="text" placeholder="Contact Number" required name="Contact_Number"><br/><br/>
+      <input size="100" type="text" placeholder="Venue" required name="Venue"><br/><br/>
+		Choose Event Type&nbsp;&nbsp;
+		<select id="Event_Type" required name="Event_Type">
+		  <option value="Birthday">Birthday</option>
+		  <option value="Reunion">Reunion</option>
+		  <option value="Wedding">Wedding</option>
+		  <option value="School Events">School Events</option>
+		</select><br/><br/>
+		Choose Design Type from Our Works:&nbsp;&nbsp;
+		<select id="Sample_Picture" required name="Sample_Picture">
+		  <option value="Sample 1">Sample 1</option>
+		  <option value="Sample 2">Sample 2</option>
+		  <option value="Sample 3">Sample 3</option>
+		  <option value="Sample 4">Sample 4</option>
+		  <option value="Sample 5">Sample 5</option>
+		  <option value="Sample 6">Sample 6</option>
+		</select>
+		<br/><br/>
+      Enter Date and Time:&nbsp;&nbsp;<input type="datetime-local" placeholder="Date" required name="Date_Time"><br/><br/>
+      Other Notes:<br/><br/><textarea rows="5" cols="50" name="Comment" placeholder="Enter your comment and suggestions here!"></textarea></p>
+	  <p>
+        <button class="w3-button w3-light-grey" name="Submit" value="Add" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <p class="w3-large">Visit us on: &nbsp;<a href="https://www.facebook.com/ae2creatives/" target="https://www.facebook.com/ae2creatives/"><i class="fa fa-facebook-official w3-hover-opacity">&nbsp;AE2 CREATIVES</i></a></p>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+</form>
+</body>
+</html>
